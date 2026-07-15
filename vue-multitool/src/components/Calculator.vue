@@ -1,5 +1,6 @@
 <script setup>
 import { useCalculator } from '../composables/useCalculator.js'
+import { useMemoryStore } from '../stores/memory.js'
 const {
     display,
     inputDigit,
