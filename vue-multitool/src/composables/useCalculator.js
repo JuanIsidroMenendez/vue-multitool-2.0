@@ -1,7 +1,10 @@
 import { ref } from 'vue'
 import { operate } from '../utils/operate.js'
+import { useMemoryStore } from '../stores/memory.js'
 
 export function useCalculator() {
+  const memory = useMemoryStore()
+
   const display = ref('0')
   const stored = ref(null)
   const operator = ref(null)
@@ -52,6 +55,21 @@ export function useCalculator() {
     waitingForOperand.value = true
   }
 
+  function memoryAdd() {
+    memory.save(parseFloat(display.value))
+  }
+
+  function memoryRecall() {
+    if (memory.value !== null) {
+      display.value = String(memory.value)
+      waitingForOperand.value = true
+    }
+  }
+
+  function memoryClear() {
+    memory.clear()
+  }
+
   function clear() {
     display.value = '0'
     stored.value = null
@@ -59,5 +77,15 @@ export function useCalculator() {
     waitingForOperand.value = false
   }
 
-  return { display, inputDigit, inputDecimal, chooseOperator, equals, clear }
+  return {
+    display,
+    inputDigit,
+    inputDecimal,
+    chooseOperator,
+    equals,
+    clear,
+    memoryAdd,
+    memoryRecall,
+    memoryClear
+  }
 }

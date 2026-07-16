@@ -1,20 +1,28 @@
 <script setup>
 import { useCalculator } from '../composables/useCalculator.js'
-import { useMemoryStore } from '../stores/memory.js'
+
 const {
-    display,
-    inputDigit,
-    inputDecimal,
-    chooseOperator, //Diferencia entre chooseOperator e inputOperator?
-    calculate,
-    equals,
-    clear,
+  display,
+  inputDigit,
+  inputDecimal,
+  chooseOperator,
+  equals,
+  clear,
+  memoryAdd,
+  memoryRecall,
+  memoryClear
 } = useCalculator()
 </script>
 
 <template>
   <section class="calculator">
     <div class="display">{{ display }}</div>
+
+    <div class="keypad keypad--memory">
+      <button class="key key--mem" @click="memoryAdd">M+</button>
+      <button class="key key--mem" @click="memoryRecall">MR</button>
+      <button class="key key--mem" @click="memoryClear">MC</button>
+    </div>
 
     <div class="keypad">
       <button class="key key--clear" @click="clear">CE</button>
@@ -67,6 +75,11 @@ const {
   gap: 0.5rem;
 }
 
+.keypad--memory {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 0.5rem;
+}
+
 .key {
   padding: 1rem;
   font-size: 1.25rem;
@@ -82,4 +95,5 @@ const {
 .key--equals { background: #4caf50; color: #fff; }
 .key--clear { background: #ef5350; color: #fff; grid-column: span 3; }
 .key--zero { grid-column: span 2; }
+.key--mem { background: #90a4ae; color: #fff; font-size: 1rem; }
 </style>
