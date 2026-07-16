@@ -1,6 +1,9 @@
 <script setup>
 import Calculator from './components/Calculator.vue'
 
+import { getCurrencyRates } from './services/currency.js'
+getCurrencyRates().then(rates => console.log(rates))
+
 </script>
 
 <template>
@@ -24,3 +27,4 @@ h1 {
                0 0 40px rgba(168, 85, 247, 0.5);
 }
 </style>
+
