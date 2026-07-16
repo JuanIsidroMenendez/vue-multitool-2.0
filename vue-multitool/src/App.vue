@@ -1,8 +1,6 @@
 <script setup>
 import Calculator from './components/Calculator.vue'
-
-import { getCurrencyRates } from './services/currency.js'
-getCurrencyRates().then(rates => console.log(rates))
+import CurrencyConverter from './components/CurrencyConverter.vue'
 
 </script>
 
@@ -10,6 +8,7 @@ getCurrencyRates().then(rates => console.log(rates))
   <main>
     <h1>Cyberpunk Multitool</h1>
     <Calculator />
+    <CurrencyConverter />
   </main>
 </template>
 
