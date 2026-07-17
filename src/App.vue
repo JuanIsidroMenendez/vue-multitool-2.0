@@ -1,7 +1,7 @@
 <script setup>
 import Calculator from './components/Calculator.vue'
 import CurrencyConverter from './components/CurrencyConverter.vue'
-
+import Weather from './components/Weather.vue'
 </script>
 
 <template>
@@ -9,6 +9,7 @@ import CurrencyConverter from './components/CurrencyConverter.vue'
     <h1>Cyberpunk Multitool</h1>
     <Calculator />
     <CurrencyConverter />
+    <Weather />
   </main>
 </template>
 
