@@ -4,7 +4,7 @@ const API_URL = 'https://api.el-tiempo.net/json/v3/provincias'
 const ASTURIAS_CODE = '33'
 const ICON_URL = 'https://www.aemet.es/imagenes_gcd/_iconos_municipios'
 
-function mapCity(city) {
+export function mapCity(city) {
   return {
     id: city.id['0'],
     name: city.name,
@@ -15,6 +15,7 @@ function mapCity(city) {
     minTemp: parseInt(city.temperatures.min, 10)
   }
 }
+
 
 export function getSkyIconUrl(skyId) {
   return `${ICON_URL}/${skyId}.png`
