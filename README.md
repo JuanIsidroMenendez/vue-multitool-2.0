@@ -88,26 +88,6 @@ vue-multitool/
 ├── playwright.config.js
 └── vite.config.js
 ```
----
-
-## Instalación
-
-```bash
-git clone https://github.com/TU_USUARIO/vue-multitool.git
-cd vue-multitool
-npm install
-```
-
-Crea el archivo `.env` (ver siguiente sección) y arranca:
-
-```bash
-npm run dev
-```
-
-La aplicación queda disponible en `http://localhost:5173`.
-
----
-
 ## Variables de entorno
 
 El conversor de divisas requiere una API key gratuita de [currencyfreaks.com](https://currencyfreaks.com).
